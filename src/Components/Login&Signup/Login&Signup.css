@@ -1,0 +1,156 @@
+/* Login page */
+.login,
+.signup {
+  min-width: 40rem;
+  min-height: 80vh;
+}
+
+.signup .container,
+.login .container {
+  background: #fff;
+  border-radius: 2rem;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+  max-width: 50rem;
+  padding: 5rem;
+
+  /* max-width: 90%; */
+}
+.login .login__form,
+.signup .signup__form {
+  width: 100%;
+  max-width: 35rem;
+}
+.login .login__form button.google {
+  border-radius: 2rem 2rem 0 0;
+}
+.signup .signup__form button:first-of-type {
+  border-radius: 2rem 2rem 0 0;
+}
+
+/* .login .login__form button:last-of-type, */
+.signup .signup__form button:last-of-type {
+  border-radius: 0 0 2rem 2rem;
+}
+.login .login__form button,
+.signup .signup__form button {
+  display: flex;
+  align-items: center;
+  height: 6rem;
+  width: 32rem;
+  margin-bottom: 0.8rem;
+  border: transparent;
+  font-weight: 700;
+  font-size: 1.4rem;
+  padding: 0 1.2rem;
+  background-color: var(--light-blue-background);
+}
+
+.signup .signup__form button:hover,
+.login .login__form button:hover {
+  background-color: var(--light-blue-background-hover);
+}
+.login .login__form button i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.2rem;
+  margin-right: 0.8rem;
+}
+
+.login .login__form button i#facebook {
+  color: #4267b2;
+}
+.signup .signup__form form div:first-of-type input {
+  border-radius: 2rem 2rem 0 0;
+}
+
+/* .login .login__form form div:last-of-type input,
+.signup .signup__form form div:last-of-type input {
+  border-radius: 0 0 2rem 2rem;
+} */
+.login .login__form form input,
+.signup .signup__form form input {
+  padding: 1rem 1.8rem 0;
+  height: 6rem;
+  width: 32rem;
+  /* border-radius: 2rem; */
+  margin-bottom: 1.6rem;
+  border-color: transparent;
+  background-color: var(--light-blue-background);
+}
+.login .login__form form .error,
+.signup .signup__form form .error {
+  color: white;
+  background-color: rgba(218, 129, 129, 0.526);
+  /* border-radius: 2rem; */
+  padding: 1rem;
+  width: 32rem;
+}
+.login .login__form form .form-floating > label,
+.signup .signup__form form .form-floating > label {
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  padding: 0;
+  padding-left: 2rem;
+  font-weight: 700;
+  line-height: 1.4;
+  font-size: 1.3rem;
+  transform-origin: -1rem -6rem;
+}
+.login .login__form .form-control,
+.signup .signup__form .form-control {
+  font-size: 1.4rem;
+}
+.login .login__form .form-control:focus,
+.signup .signup__form .form-control:focus,
+.signup .signup__form form button:hover,
+.signup .signup__form form button:active {
+  box-shadow: none;
+}
+
+.login .login__form form .form-floating a,
+.signup .signup__form form .form-floating a {
+  position: absolute;
+  top: 1.6rem;
+  right: 1rem;
+  font-size: 2rem;
+}
+
+.login .login__form form button,
+.signup .signup__form form button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--blue);
+  color: white;
+  margin-bottom: 1.6rem;
+  height: 6rem;
+  border-radius: 0 0 2rem 2rem;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+}
+
+.login .login__form form button:hover,
+.login .login__form form button:active,
+.signup .signup__form form button:hover,
+.signup .signup__form form button:active {
+  background-color: var(--blue-button-background-hover);
+  box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+}
+
+.login .login__form .login__signup a,
+.signup .signup__form .signup__login a {
+  text-decoration: underline;
+  color: var(--blue);
+  font-weight: 700;
+}
+
+/* Sinup page */
+
+.signup .signup__form .signup__terms-and-policy__underline {
+  margin: 1.6rem 0;
+  border-top: 1px solid #d1d7dc;
+}
+.signup .signup__form .signup__terms-and-policy p a {
+  color: var(--blue);
+}

@@ -1,0 +1,308 @@
+/* Header */
+
+header {
+  position: sticky;
+  /* width: 100%; */
+  background-color: var(--white-text);
+  top: 0;
+  z-index: 11;
+  min-width: 40rem;
+  height: 7.2rem;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
+}
+header .header__logo {
+  width: 25rem;
+  height: 6rem;
+}
+header .header__logo a img {
+  width: 100%;
+  /* width: 14.3rem;
+  height: 4.2rem; */
+}
+header .header__search-bar {
+  width: 100%;
+  height: 4.6rem;
+}
+
+header .header__search-bar input {
+  width: 100%;
+  min-width: 18rem;
+  border: 1px solid black;
+  border-radius: 3rem;
+  padding: 0 2.4rem 0 4rem;
+  background-color: var(--grey-background);
+}
+
+header .header__search-bar input:focus {
+  outline: none;
+}
+header .header__search-bar button {
+  left: 1.2rem;
+  top: 1.3rem;
+}
+header .cart-icon {
+  position: relative;
+}
+
+header .cart-icon a {
+  font-size: 3rem;
+  color: var(--black-text);
+}
+header .cart-icon .cart-count {
+  position: absolute;
+  right: -1rem;
+  top: -0.5rem;
+  min-width: 2em;
+  padding: 0.4rem 0.8rem;
+  margin: 0;
+  border-radius: 50%;
+  display: inline-block;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-align: center;
+  background: #a435f0;
+  color: #fff;
+}
+
+header .my-learning {
+  color: var(--black-text);
+  min-width: fit-content;
+}
+
+header .my-learning:hover {
+  color: var(--purple-text);
+}
+
+header .user-profile-btn {
+  background-color: var(--blue);
+  border: 1px solid var(--black-text);
+  border-radius: 50%;
+  padding: 1rem 1.3rem;
+  color: var(--white-text);
+}
+
+header .user-profile-btn:hover {
+  filter: brightness(75%);
+}
+
+header .user-menu {
+  display: flex;
+  right: 1px;
+  top: 2rem;
+  border-radius: 2rem;
+  width: 30rem;
+}
+header .user-menu .invisible {
+  height: 3rem;
+  visibility: hidden;
+}
+header .user-menu.hidden {
+  display: none;
+}
+header .user-menu .user-profile {
+  padding: 1rem;
+  border-radius: 2rem;
+  background-color: var(--light-blue-background);
+
+  box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+}
+
+header .user-menu .user-profile-container {
+  padding-top: 2rem;
+  border-radius: 2rem 2rem 0 0;
+  margin-bottom: 0.5rem;
+  background-color: white;
+}
+
+header .user-menu .user-menu-options-container {
+  border-radius: 0 0 2rem 2rem;
+  border-top: none;
+}
+
+header .user-menu-options-container a {
+  font-size: 1.4rem;
+  background-color: white;
+  padding: 0.8rem 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--blue);
+}
+header .user-menu-options-container a:last-of-type {
+  border-radius: 0 0 2rem 2rem;
+}
+
+header .user-menu-options-container a:hover {
+  background-color: var(--light-blue-background-hover);
+}
+header .header__login-btn button {
+  border-radius: 1rem;
+  height: 4rem;
+  width: 8rem;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+  /* border: 1px solid var(--black-text); */
+  background-color: var(--grey-background);
+}
+header .header__login-btn button:hover {
+  background-color: white;
+}
+
+header .header__signup-btn button {
+  border-radius: 1rem;
+  background-color: var(--blue);
+  color: var(--white-text);
+  height: 4rem;
+  width: 8rem;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+}
+header .header__signup-btn button:hover {
+  background-color: var(--blue-button-background-hover);
+}
+
+header .header__language-btn button {
+  width: 4rem;
+  height: 4rem;
+  border: 1px solid var(--blue);
+}
+
+/* responsive-mobile styling of header */
+header .header__nav-icon button {
+  border: none;
+  background-color: transparent;
+}
+
+/* header language model */
+.modal-backdrop {
+  z-index: 10;
+}
+.modal-content {
+  padding: 3.2rem;
+}
+.modal-content .modal-header {
+  padding: 0;
+  border-bottom: 0;
+}
+.modal-content .modal-header h1 {
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+.modal-content .modal-header .btn-close {
+  width: 0.4rem;
+  height: 0.4rem;
+  border: none;
+}
+.modal-content .modal-header .btn-close:focus {
+  box-shadow: none;
+}
+.modal-content .modal-body {
+  padding: 2.6rem 0;
+}
+.modal-content .modal-body button {
+  width: 21rem;
+  height: 4rem;
+  padding-left: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  font-size: 1.8rem;
+}
+
+@media screen and (max-width: 767px) {
+  header .header__logo a img {
+  }
+}
+
+/* mobile navbar */
+.side-navbar-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 16;
+  opacity: 0.5;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  transition: opacity 0.15s linear;
+  min-width: 40rem;
+}
+
+.side-navbar {
+  z-index: 17;
+  position: absolute;
+  left: 0rem;
+  top: 0rem;
+  margin-left: -400px;
+  width: 280px;
+  height: 100vh;
+  background-color: var(--white-text);
+  transition: 0.5s;
+}
+
+.active {
+  margin-left: 0;
+}
+
+.side-navbar .navbar-close-btn {
+  font-size: 2.4rem;
+  border-radius: 50%;
+  padding: 1rem;
+  position: absolute;
+  right: -5.5rem;
+  top: 1rem;
+  background-color: var(--white-text);
+  transform: scale(0);
+  transition: transform 150ms cubic-bezier(0.2, 0, 1, 0.9);
+}
+
+.side-navbar.active .navbar-close-btn {
+  transform: scale(1);
+  transition: transform 100ms cubic-bezier(0, 0, 0.38, 0.9) 400ms;
+}
+
+.side-navbar .user-profile-container {
+  background-color: #f7f9fa;
+}
+.side-navbar .user-profile-container span {
+  color: var(--light-grey-text);
+}
+.side-navbar .user-profile-btn {
+  font-size: 2rem;
+  padding: 2rem;
+  background-color: var(--blue);
+}
+
+/* mobile search page */
+.mobile-search {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--white-text);
+  min-width: 40rem;
+}
+
+.mobile-search .search-bar {
+  width: 100%;
+  min-width: 40rem;
+  height: 4.6rem;
+}
+
+.mobile-search .search-bar input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--light-grey-border);
+  padding: 0 2.4rem 0 4rem;
+}
+.mobile-search .search-bar input:focus {
+  outline: none;
+}
+
+.mobile-search .search-bar .search-btn {
+  left: 1.2rem;
+  top: 1.3rem;
+}
+
+.mobile-search .search-close-btn {
+  position: absolute;
+  width: fit-content;
+  right: 0rem;
+}
