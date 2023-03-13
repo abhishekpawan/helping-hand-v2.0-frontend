@@ -1,16 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { TbWorld } from "react-icons/tb";
 import {
   AiOutlineShoppingCart,
   AiOutlineSearch,
   AiOutlineHeart,
 } from "react-icons/ai";
-import { HiBars3 } from "react-icons/hi2";
+import { HiBars3, HiHome, HiHomeModern } from "react-icons/hi2";
 import { FaUserAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { IoMdClose } from "react-icons/io";
-import HelpingHandLogo from "../../Assets/HelpingHandLogo.png";
 
 import "./Header.css";
 import { AppContext } from "../../App";
@@ -19,7 +17,8 @@ import { showNotification } from "../../utils/ToastNotification";
 
 const Header = () => {
   const navigate = useNavigate();
-  const { isUserLoggedIn, setUserLoggedin, user } = useContext(AppContext);
+  const { isUserLoggedIn, setUserLoggedin, user, setUserLocationAvailable } =
+    useContext(AppContext);
   const [searchText, setSearchText] = useState<string>("");
   const [isUserMenuVisible, setUserMenuVisible] = useState<boolean>(false);
   const [isMobileNavVisible, setMobileNavVisible] = useState<boolean>(false);
@@ -40,6 +39,8 @@ const Header = () => {
   const logoutUser = () => {
     showNotification("success", "You logged out succesfully!");
     localStorage.removeItem("user");
+    localStorage.removeItem("location");
+    setUserLocationAvailable(false);
     setUserLoggedin(false);
     navigate("/");
   };
@@ -72,58 +73,65 @@ const Header = () => {
       >
         {isUserLoggedIn ? (
           <>
-            <div className="user-profile d-flex align-items-center justify-content-start ps-4 py-4 ">
-              <button className="user-profile-btn d-flex align-items-center justify-content-center me-3">
-                <FaUserAlt />
-              </button>
-              <div className="d-flex flex-column fs-5">
-                <div className="fw-bold fs-3">Hi, {user?.name}</div>
-                <span className="mt-2">Welcome Back</span>
+            <div className="user-profile">
+              <div className="user-profile-container d-flex align-items-center justify-content-start ps-4 py-4 ">
+                <button className="user-profile-btn d-flex align-items-center justify-content-center me-3">
+                  <FaUserAlt />
+                </button>
+                <div className="d-flex flex-column fs-5">
+                  <div className="fw-bold fs-3">Hi, {user?.name}</div>
+                  <span className="mt-2">Welcome Back</span>
+                </div>
               </div>
             </div>
-            <div className="user-menu-options p-4 d-flex flex-column fs-3">
-              <Link onClick={() => setMobileNavVisible(false)} to="/mywishlist">
-                My Wishlist
-              </Link>
-              <Link onClick={() => setMobileNavVisible(false)} to="/cart">
-                My Cart
-              </Link>
-              <Link onClick={() => setMobileNavVisible(false)} to="/help">
-                Help
-              </Link>
-              <a
-                href=""
-                onClick={() => {
-                  logoutUser();
-                  setMobileNavVisible(false);
-                }}
-              >
-                Log out
-              </a>
+            <div className="user-menu">
+              <div className="user-menu-options-container d-flex flex-column fs-3">
+                <Link
+                  onClick={() => setMobileNavVisible(false)}
+                  to="/mywishlist"
+                >
+                  My Wishlist
+                </Link>
+                <Link onClick={() => setMobileNavVisible(false)} to="/cart">
+                  My Cart
+                </Link>
+                <Link onClick={() => setMobileNavVisible(false)} to="/help">
+                  Help
+                </Link>
+                <a
+                  href=""
+                  onClick={() => {
+                    logoutUser();
+                    setMobileNavVisible(false);
+                  }}
+                >
+                  Log out
+                </a>
+              </div>
             </div>
           </>
         ) : (
           <>
-            <div className="user-menu-options p-4 d-flex flex-column fs-3">
-              <a
-                href="#"
-                className="mb-3 mb-4"
-                onClick={() => {
-                  loginHandler();
-                  setMobileNavVisible(false);
-                }}
-              >
-                Log in
-              </a>
-              <a
-                href="#"
-                onClick={() => {
-                  signupHandler();
-                  setMobileNavVisible(false);
-                }}
-              >
-                Sign up
-              </a>
+            <div className="user-profile">
+              <div className="user-menu-options-container logout d-flex flex-column fs-3">
+                <a
+                  className=""
+                  onClick={() => {
+                    loginHandler();
+                    setMobileNavVisible(false);
+                  }}
+                >
+                  Log in
+                </a>
+                <a
+                  onClick={() => {
+                    signupHandler();
+                    setMobileNavVisible(false);
+                  }}
+                >
+                  Sign up
+                </a>
+              </div>
             </div>
           </>
         )}
@@ -140,7 +148,8 @@ const Header = () => {
 
       <nav className="header__logo">
         <Link className="me-3" to="/">
-          <img src={HelpingHandLogo} alt="findemy-logo" />
+          <HiHome />
+          {/* <img src={HelpingHandLogo} alt="findemy-logo" /> */}
         </Link>
       </nav>
 
@@ -168,8 +177,6 @@ const Header = () => {
       ) : (
         ""
       )} */}
-
-      {isUserLoggedIn ? <></> : ""}
 
       {/* {isMobileSearchVisible ? (
         <div className="mobile-search d-block d-md-none">
@@ -290,7 +297,7 @@ const Header = () => {
             </button>
           </div>
           <div className="header__signup-btn d-none d-md-flex">
-            <button className="fs-5 fw-bold me-3 px-2" onClick={signupHandler}>
+            <button className="fs-5 fw-bold px-2" onClick={signupHandler}>
               Sign up
             </button>
           </div>

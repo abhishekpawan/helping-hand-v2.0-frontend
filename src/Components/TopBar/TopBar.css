@@ -1,0 +1,42 @@
+.topbar {
+  padding: 3rem;
+  height: 7rem;
+  /* border-bottom: 2px solid var(--blue); */
+}
+.topbar .location {
+  max-width: 30rem;
+  cursor: pointer;
+  padding: 0 1.4rem 0.8rem 0.8rem;
+  border-radius: 1rem;
+}
+.topbar .location:hover {
+  /* filter: brightness(15%); */
+  background-color: var(--light-blue-background-hover);
+}
+
+.topbar .location .icon {
+  font-size: 3rem;
+}
+
+.topbar .location .address {
+  padding: 0.5rem;
+  color: #686b78;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  border-bottom: 2px solid var(--blue-button-background-hover);
+}
+
+.topbar .add-food-btn button {
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: var(--blue);
+  color: var(--white-text);
+  height: 4rem;
+  /* width: 8rem; */
+  box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+}
+
+.topbar .add-food-btn button:hover {
+  background-color: var(--blue-button-background-hover);
+}

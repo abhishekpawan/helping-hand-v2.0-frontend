@@ -10,9 +10,24 @@ header {
   height: 7.2rem;
   box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
 }
-header .header__logo {
-  width: 25rem;
-  height: 6rem;
+header .header__logo a {
+  padding: 1rem;
+  border-radius: 1rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  background-color: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header .header__logo a svg {
+  color: var(--white-text);
+}
+header .header__logo a:hover {
+  background-color: var(--blue-button-background-hover);
 }
 header .header__logo a img {
   width: 100%;
@@ -74,6 +89,7 @@ header .my-learning:hover {
 }
 
 header .user-profile-btn {
+  cursor: pointer;
   background-color: var(--blue);
   border: 1px solid var(--black-text);
   border-radius: 50%;
@@ -81,7 +97,7 @@ header .user-profile-btn {
   color: var(--white-text);
 }
 
-header .user-profile-btn:hover {
+.user-profile-btn:hover {
   filter: brightness(75%);
 }
 
@@ -120,12 +136,13 @@ header .user-menu .user-menu-options-container {
 }
 
 header .user-menu-options-container a {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   background-color: white;
   padding: 0.8rem 2rem;
   margin-bottom: 0.5rem;
   color: var(--blue);
 }
+
 header .user-menu-options-container a:last-of-type {
   border-radius: 0 0 2rem 2rem;
 }
@@ -225,6 +242,7 @@ header .header__nav-icon button {
 }
 
 .side-navbar {
+  border-radius: 0 2rem 2rem 0;
   z-index: 17;
   position: absolute;
   left: 0rem;
@@ -232,7 +250,8 @@ header .header__nav-icon button {
   margin-left: -400px;
   width: 280px;
   height: 100vh;
-  background-color: var(--white-text);
+  background-color: var(--light-blue-background);
+
   transition: 0.5s;
 }
 
@@ -241,8 +260,8 @@ header .header__nav-icon button {
 }
 
 .side-navbar .navbar-close-btn {
+  border-radius: 1rem;
   font-size: 2.4rem;
-  border-radius: 50%;
   padding: 1rem;
   position: absolute;
   right: -5.5rem;
@@ -257,8 +276,15 @@ header .header__nav-icon button {
   transition: transform 100ms cubic-bezier(0, 0, 0.38, 0.9) 400ms;
 }
 
+.side-navbar .user-profile {
+  background-color: var(--light-blue-background);
+  padding: 1rem;
+  border-radius: 0 2rem 0 0;
+}
+
 .side-navbar .user-profile-container {
-  background-color: #f7f9fa;
+  background-color: white;
+  border-radius: 2rem 2rem 0 0;
 }
 .side-navbar .user-profile-container span {
   color: var(--light-grey-text);
@@ -269,6 +295,21 @@ header .header__nav-icon button {
   background-color: var(--blue);
 }
 
+.side-navbar .user-menu {
+  width: 100%;
+  padding: 0 1rem 1rem;
+}
+
+.side-navbar .user-menu .user-menu-options-container {
+  width: 100%;
+}
+
+.side-navbar .user-menu-options-container.logout a:last-child {
+  border-radius: 0 0 2rem 2rem;
+}
+.side-navbar .user-menu-options-container.logout a {
+  border-radius: 2rem 2rem 0 0;
+}
 /* mobile search page */
 .mobile-search {
   position: fixed;

@@ -6,3 +6,8 @@ export interface UserData {
   role: string;
   token: string;
 }
+
+export interface IPosition {
+  lat: number;
+  lng: number;
+}

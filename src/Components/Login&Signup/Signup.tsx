@@ -110,7 +110,8 @@ const Signup = () => {
               >
                 an Individual
               </button>
-              <h2>OR</h2>
+              <button className="justify-content-center fs-3">OR</button>
+
               <button
                 onClick={() => setRole("organisation")}
                 className="justify-content-center fs-3"

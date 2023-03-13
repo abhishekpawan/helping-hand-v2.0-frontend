@@ -1,0 +1,147 @@
+.homepage {
+  background-color: var(--light-blue-background);
+  min-width: 40rem;
+  height: 100vh;
+}
+
+.homepage .logo {
+  padding: 4rem;
+  height: 20rem;
+}
+
+.homepage .logo img {
+  height: 100%;
+}
+.homepage .quotes {
+  text-align: center;
+  padding: 4rem 4rem 0 4rem;
+  /* height: 20rem; */
+}
+.homepage .quotes h1 {
+  font-size: 4rem;
+}
+.homepage .quotes p {
+  margin-top: 2rem;
+  font-size: 2rem;
+  color: var(--blue-button-background-hover);
+}
+
+.homepage .location-search-container {
+  height: 20rem;
+  width: 100%;
+  padding: 4rem;
+}
+.homepage .location-search-container input {
+  padding: 1rem;
+  height: 6rem;
+  width: 45rem;
+  border-color: transparent;
+  /* background-color: var(--light-blue-background); */
+}
+.homepage .location-search-container input:focus {
+  outline: none;
+}
+.homepage .location-search-container .buttons {
+  width: 100%;
+}
+.homepage .location-search-container button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--blue);
+  color: white;
+  margin-top: 1.6rem;
+  height: 6rem;
+  width: 100%;
+  border-radius: 0 0 0 2rem;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+}
+
+.homepage .location-search-container button:last-of-type {
+  margin-left: 1rem;
+  border-radius: 0 0 2rem 0;
+}
+.homepage .location-search-container button:hover {
+  background-color: var(--blue-button-background-hover);
+}
+
+.homepage .location-search-container button.locate-me-btn {
+  border-radius: 0;
+}
+.homepage .banner {
+  height: 20rem;
+}
+.homepage .location-search {
+  position: relative;
+}
+
+.homepage .location-search .location {
+  max-width: 40rem;
+  cursor: pointer;
+  padding: 0 1.4rem 0.8rem 0.8rem;
+  border-radius: 1rem;
+}
+
+.homepage .location-search .location .icon {
+  font-size: 3rem;
+}
+
+.homepage .location-search .location .address {
+  padding: 0.5rem;
+  color: #686b78;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  border-bottom: 2px solid var(--blue-button-background-hover);
+}
+
+.homepage .location-search button.change-btn {
+  width: 10rem;
+  height: 4rem;
+  border-radius: 1rem;
+  margin-top: 0;
+}
+
+.homepage .location-search .search-suggestions {
+  position: absolute;
+  z-index: 10;
+}
+.homepage .location-search .single-search-suggestions {
+  padding: 1rem;
+  width: 45rem;
+  margin-bottom: 1rem;
+
+  border-color: transparent;
+  background-color: var(--white-text);
+}
+.homepage .location-search .single-search-suggestions:first-of-type {
+  margin-top: 1rem;
+}
+.homepage .location-search .single-search-suggestions:hover {
+  cursor: pointer;
+  background-color: var(--light-blue-background-hover);
+}
+/* .homepage .location-search .single-search-suggestions:last-of-type {
+  border-radius: 0 0 2rem 2rem;
+} */
+
+.homepage .location-search .single-search-suggestions .icon {
+  font-size: 3rem;
+  padding-right: 1rem;
+}
+
+@media screen and (max-width: 767px) {
+  .homepage .logo {
+    height: 15rem;
+  }
+
+  .homepage .quotes h1 {
+    font-size: 3rem;
+  }
+  .homepage .location-search-container input {
+    width: 35rem;
+  }
+  .homepage .location-search .single-search-suggestions {
+    width: 35rem;
+  }
+}
