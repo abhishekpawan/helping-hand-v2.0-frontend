@@ -6,7 +6,7 @@ header {
   background-color: var(--white-text);
   top: 0;
   z-index: 11;
-  min-width: 40rem;
+  min-width: 35rem;
   height: 7.2rem;
   box-shadow: 0 2px 4px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 8%);
 }
@@ -186,42 +186,6 @@ header .header__nav-icon button {
   background-color: transparent;
 }
 
-/* header language model */
-.modal-backdrop {
-  z-index: 10;
-}
-.modal-content {
-  padding: 3.2rem;
-}
-.modal-content .modal-header {
-  padding: 0;
-  border-bottom: 0;
-}
-.modal-content .modal-header h1 {
-  font-weight: 700;
-  font-size: 1.8rem;
-}
-.modal-content .modal-header .btn-close {
-  width: 0.4rem;
-  height: 0.4rem;
-  border: none;
-}
-.modal-content .modal-header .btn-close:focus {
-  box-shadow: none;
-}
-.modal-content .modal-body {
-  padding: 2.6rem 0;
-}
-.modal-content .modal-body button {
-  width: 21rem;
-  height: 4rem;
-  padding-left: 1.6rem;
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  font-size: 1.8rem;
-}
-
 @media screen and (max-width: 767px) {
   header .header__logo a img {
   }
@@ -238,7 +202,7 @@ header .header__nav-icon button {
   height: 100vh;
   background-color: #000;
   transition: opacity 0.15s linear;
-  min-width: 40rem;
+  min-width: 35rem;
 }
 
 .side-navbar {
@@ -318,12 +282,12 @@ header .header__nav-icon button {
   width: 100vw;
   height: 100vh;
   background-color: var(--white-text);
-  min-width: 40rem;
+  min-width: 35rem;
 }
 
 .mobile-search .search-bar {
   width: 100%;
-  min-width: 40rem;
+  min-width: 35rem;
   height: 4.6rem;
 }
 

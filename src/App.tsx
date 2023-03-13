@@ -28,8 +28,7 @@ const App = ({ isScriptLoaded, isScriptLoadSucceed }) => {
   const [isUserLocationAvailable, setUserLocationAvailable] = useState<boolean>(
     location ? true : false
   );
-  console.log(isUserLocationAvailable);
-  console.log(locationData);
+
   if (isScriptLoaded && isScriptLoadSucceed) {
     return (
       <>

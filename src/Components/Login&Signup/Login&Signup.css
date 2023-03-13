@@ -1,7 +1,7 @@
 /* Login page */
 .login,
 .signup {
-  min-width: 40rem;
+  min-width: 35rem;
   min-height: 80vh;
 }
 

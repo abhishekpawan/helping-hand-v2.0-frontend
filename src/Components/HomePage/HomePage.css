@@ -1,6 +1,6 @@
 .homepage {
   background-color: var(--light-blue-background);
-  min-width: 40rem;
+  min-width: 35rem;
   height: 100vh;
 }
 
@@ -139,9 +139,9 @@
     font-size: 3rem;
   }
   .homepage .location-search-container input {
-    width: 35rem;
+    width: 30rem;
   }
   .homepage .location-search .single-search-suggestions {
-    width: 35rem;
+    width: 30rem;
   }
 }
