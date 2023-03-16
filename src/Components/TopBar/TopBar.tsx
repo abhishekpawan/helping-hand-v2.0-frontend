@@ -6,7 +6,6 @@ import "./TopBar.css";
 
 const TopBar = () => {
   const { location, locationData } = useContext(AppContext);
-  console.log(locationData);
   return (
     <>
       <div className="topbar row d-flex justify-content-between align-items-center">

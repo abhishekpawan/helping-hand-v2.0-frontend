@@ -1,5 +1,13 @@
 .availablefoods {
-  background-color: var(--light-blue-background);
+  /* background-color: var(--light-blue-background); */
   min-width: 35rem;
-  height: 100vh;
+  min-height: 100vh;
+}
+
+.availablefoods .foodcards {
+  margin: 0 2rem 2rem;
+  padding: 2rem;
+  border-radius: 2rem;
+  background-color: white;
+  min-height: 75vh;
 }

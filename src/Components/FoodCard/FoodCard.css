@@ -1,0 +1,100 @@
+.foodcard {
+  padding: 2rem;
+  /* background-color: var(--light-blue-background); */
+  border-radius: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid var(--blue);
+}
+
+.foodcard:hover {
+  border: none;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+
+  background-color: var(--light-blue-background-hover);
+}
+.foodcard .food-desc-container .thumbnail img {
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+}
+
+.foodcard .food-desc-container .description {
+  color: #686b78;
+  font-size: 1.6rem;
+}
+
+.foodcard .food-desc-container .description .title {
+  color: var(--blue);
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+.foodcard .food-desc-container .description img {
+  width: 2.2rem;
+  margin-left: 2rem;
+}
+
+.foodcard .food-desc-container .description .location {
+  cursor: pointer;
+  border-radius: 1rem;
+  max-width: 30rem;
+}
+
+.foodcard .food-desc-container .description .location .icon {
+  font-size: 2.5rem;
+}
+
+.foodcard .food-desc-container .description .location .address {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.foodcard .food-desc-container .description .short-desc {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.foodcard .user-desc-container {
+  color: #686b78;
+}
+
+.foodcard .user-desc-container .row {
+  height: 100%;
+}
+
+.foodcard .user-desc-container .user-desc b {
+  font-size: 2rem;
+}
+.foodcard .user-desc-container .user-desc p {
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.foodcard .user-desc-container .buttons button {
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: var(--blue);
+  color: var(--white-text);
+  height: 4rem;
+  width: 100%;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+}
+.foodcard .user-desc-container .buttons button:last-of-type {
+  margin-top: 2rem;
+}
+
+.foodcard .user-desc-container .buttons button:hover {
+  background-color: var(--blue-button-background-hover);
+}
+
+.foodcard .dottedSeparator {
+  width: 90%;
+  border: none;
+  border-bottom: 1px dashed var(--blue);
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+  margin: 1rem 0 1rem 0;
+}

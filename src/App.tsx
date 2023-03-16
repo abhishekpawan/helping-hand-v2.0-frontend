@@ -1,6 +1,6 @@
 // @ts-ignore
 import scriptLoader from "react-async-script-loader";
-import React, { createContext, FC, useState } from "react";
+import React, { createContext, FC, useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./Components/HomePage/HomePage";
 import Login from "./Components/Login&Signup/Login";
@@ -12,9 +12,13 @@ import Signup from "./Components/Login&Signup/Signup";
 import MapPage from "./Components/HomePage/MapPage";
 import AvailableFoodsPage from "./Components/AvailableFoodsPage/AvailableFoodsPage";
 import NotFoundPage from "./Components/NotFoundPage/NotFoundPage";
+import { useDispatch } from "react-redux";
+import { AppDispatch, useAppSelector } from "./redux/store/store";
+import { fetchFoodsAsync } from "./redux/reducers/food.reducer";
 export const AppContext = createContext<any>(null);
 // @ts-ignore
 const App = ({ isScriptLoaded, isScriptLoadSucceed }) => {
+  //@ts-check
   const userData: UserData = JSON.parse(localStorage.getItem("user")!);
   const [user, setUser] = useState<UserData | null>(userData ? userData : null);
   const [isUserLoggedIn, setUserLoggedin] = useState<boolean>(
@@ -28,6 +32,14 @@ const App = ({ isScriptLoaded, isScriptLoadSucceed }) => {
   const [isUserLocationAvailable, setUserLocationAvailable] = useState<boolean>(
     location ? true : false
   );
+
+  const dispatch = useDispatch<AppDispatch>();
+  const { foods } = useAppSelector((store) => store.foods);
+  useEffect(() => {
+    if (foods.length === 0 && isUserLoggedIn === true) {
+      dispatch(fetchFoodsAsync({ limit: 10, skip: 0 }));
+    }
+  }, []);
 
   if (isScriptLoaded && isScriptLoadSucceed) {
     return (
@@ -73,5 +85,5 @@ const App = ({ isScriptLoaded, isScriptLoadSucceed }) => {
 };
 
 export default scriptLoader([
-  `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAP_API_KEY}&libraries=places`,
+  `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAP_API_KEY}&libraries=places,geometry`,
 ])(App);

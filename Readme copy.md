@@ -1,1 +1,0 @@
-MongoDB Admin Pannel Backend

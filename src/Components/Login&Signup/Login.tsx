@@ -9,6 +9,8 @@ import { AppContext } from "../../App";
 import { showNotification } from "../../utils/ToastNotification";
 import { LoadingOutlined } from "@ant-design/icons";
 import { Spin } from "antd";
+import axios from "axios";
+import { UserData } from "../../utils/interface";
 
 type Inputs = {
   email: string;
@@ -42,24 +44,27 @@ const Login = () => {
   const onSubmit: SubmitHandler<Inputs> = async (loginData) => {
     setSpining(true);
     try {
-      const requestOptions = {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(loginData),
-      };
-      let response = await fetch(
+      // const requestOptions = {
+      //   headers: { "Content-Type": "application/json" },
+      //   body: JSON.stringify(loginData),
+      // };
+      let response: any = await axios.post(
         "http://localhost:3005/user/login",
-        requestOptions
+        loginData
       );
-      const data = await response.json();
 
+      // let response = await fetch(
+      //   "http://localhost:3005/user/login",
+      //   requestOptions
+      // );
+      const { data }: any = await response;
       if (data.success == true) {
         const userInfromation = {
           id: data.userData._id,
           name: data.userData.name,
           email: data.userData.email,
           phone: data.userData.phone,
-          role:data.userData.role
+          role: data.userData.role,
         };
         localStorage.setItem("user", JSON.stringify(userInfromation));
         setUser(userInfromation);
